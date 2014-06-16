@@ -48,7 +48,7 @@ namespace NuGetUsage.Controllers
 				else
 					packagesByUsage = packagesByUsage.OrderByDescending(fieldExpression);
 
-				var packagesNames = packagesByUsage.ToList().Select(p => p.PackageName).ToList();
+				var packagesNames = packagesByUsage.ToList().Select(p => "Packages/" + p.PackageName).ToList();
 
 				packages = DocumentSession.Load<Package>(packagesNames).ToList();
 
