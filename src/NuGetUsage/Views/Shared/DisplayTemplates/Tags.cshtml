@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+
+@if (Model != null && Model.Any())
+{
+    <div class="panel-footer">
+        <ul class="list-inline">
+            @foreach (var tag in Model)
+            {
+                <li>
+                    <span class="label label-default">@tag</span>
+                </li>
+            }
+        </ul>
+    </div>
+}

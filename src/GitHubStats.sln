@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetUsage", "NuGetUsage\NuGetUsage.csproj", "{952B8337-AFC7-48C6-A9A6-4B8048F68703}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{59BE8754-B93E-4AE6-AEA9-3BF84BC9DF24}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{A63C02DC-EC86-4464-808E-CA2C4535191C}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\NuGetUsage-WAWS-dev.json = PublishScripts\Configurations\NuGetUsage-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DB0EF506-A338-447E-AE11-F0898093FA37}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImporterTool", "ImporterTool\ImporterTool.csproj", "{EE2EB52E-3196-4396-BFD7-E05CECAB987F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{952B8337-AFC7-48C6-A9A6-4B8048F68703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952B8337-AFC7-48C6-A9A6-4B8048F68703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952B8337-AFC7-48C6-A9A6-4B8048F68703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952B8337-AFC7-48C6-A9A6-4B8048F68703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2EB52E-3196-4396-BFD7-E05CECAB987F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2EB52E-3196-4396-BFD7-E05CECAB987F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2EB52E-3196-4396-BFD7-E05CECAB987F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2EB52E-3196-4396-BFD7-E05CECAB987F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A63C02DC-EC86-4464-808E-CA2C4535191C} = {59BE8754-B93E-4AE6-AEA9-3BF84BC9DF24}
+	EndGlobalSection
+EndGlobal

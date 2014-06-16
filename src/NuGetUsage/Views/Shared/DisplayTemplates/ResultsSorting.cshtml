@@ -1,0 +1,39 @@
+﻿@using NuGetUsage.ViewModels
+@model RepoViewModel
+           
+@if (Model != null && Model.Packages != null && Model.Packages.Any())
+{
+    var byNameSortOrder = Model.SortOrder == SortOrder.Asc ? SortOrder.Desc : SortOrder.Asc;
+    var byPopularitySortOrder = Model.SortOrder == SortOrder.Asc ? SortOrder.Desc : SortOrder.Asc;
+    var byNameIcon = Model.SortField == SortField.Name ? (Model.SortOrder == SortOrder.Asc ? "glyphicon-arrow-up" : "glyphicon-arrow-down") : "";
+    var byPopularityIcon = Model.SortField == SortField.Popularity ? (Model.SortOrder == SortOrder.Asc ? "glyphicon-arrow-up" : "glyphicon-arrow-down") : "";
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Sort packages</div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+                <input type="hidden" id="AdminKey" name="AdminKey" value="@Model.AdminKey" />
+                <input type="hidden" id="Query" name="Query" value="@Model.Query" />
+                <input type="hidden" id="SortOrder" name="SortOrder" value="@byNameSortOrder" />
+                <input type="hidden" id="SortField" name="SortField" value="@(SortField.Name)" />
+                
+                <button class="btn btn-link" type="submit">
+                    Name <i class="glyphicon @byNameIcon"></i>
+                </button>
+            }
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+                <input type="hidden" id="AdminKey" name="AdminKey" value="@Model.AdminKey" />
+                <input type="hidden" id="Query" name="Query" value="@Model.Query" />
+                <input type="hidden" id="SortOrder" name="SortOrder" value="@byPopularitySortOrder" />
+                <input type="hidden" id="SortField" name="SortField" value="@(SortField.Popularity)" />
+                
+                <button class="btn btn-link" type="submit">
+                    Popularity <i class="glyphicon @byPopularityIcon"></i>
+                </button>
+            }
+        </div>
+    </div>
+    
+}

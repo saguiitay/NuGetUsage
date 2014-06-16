@@ -1,0 +1,32 @@
+﻿@model NuGetUsage.ViewModels.RepoViewModel
+
+
+<div>
+    @if (Model.AllowImport)
+    {
+        <div class="alert alert-danger">
+            @Model.Query <text>was not found. </text>@Html.ActionLink("Do you want to impot it?", "Import", new { query = (@Model.Query) })
+        </div>
+    }
+    @if (Model.Repo != null)
+    {
+        <h4>@Model.Repo.FullName</h4>
+        <hr />
+        <div class="row">
+            @if (Model.Packages != null && Model.Packages.Any())
+            {
+                foreach (var package in Model.Packages)
+                {
+                    @Html.DisplayFor(x => package, "Package")
+                }
+            }
+            else
+            {
+                <div class="col-md-12">
+                    This repository doesn't use any packages
+                </div>
+
+            }
+        </div>
+    }
+</div>

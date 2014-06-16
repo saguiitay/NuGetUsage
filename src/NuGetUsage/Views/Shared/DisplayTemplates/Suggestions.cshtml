@@ -1,0 +1,18 @@
+﻿@model NuGetUsage.ViewModels.RepoViewModel
+
+@if (Model.Suggestions != null)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">Suggestions</div>
+        <div class="panel-body">
+            Did you mean:
+            <ul class="list-inline">
+                @foreach (var suggestion in Model.Suggestions)
+                {
+                    <li>@Html.ActionLink(@suggestion, "Index", "Home", new { Query = suggestion }, null)</li>
+                }
+            </ul>
+        </div>
+    </div>
+
+}

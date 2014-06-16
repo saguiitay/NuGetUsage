@@ -1,0 +1,59 @@
+﻿@model NuGetUsage.ViewModels.RepoViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (Model == null || string.IsNullOrWhiteSpace(Model.Query))
+{
+    <h1 class="text-center">GetNu</h1>
+    using (Html.BeginForm("Index", "Home", Model, FormMethod.Get, new { role = "form" }))
+    {
+        if (Model.AdminKey != null)
+        {
+            @Html.HiddenFor(x => x.AdminKey);
+        }
+        <div class="row row-buffer-15">
+            <div class="col-md-8 col-md-offset-2">
+                @Html.TextBoxFor(x => x.Query, new {@class = "form-control"})
+            </div>
+        </div>
+        <div class="row row-buffer-15">
+            <div class="col-md-2 col-md-offset-5 text-center">
+                <input type="submit" value="Search" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    }
+}
+else
+{
+    using (Html.BeginForm("Index", "Home", Model, FormMethod.Get, new { role = "form" }))
+    {
+        if (Model.AdminKey != null)
+        {
+            @Html.HiddenFor(x => x.AdminKey);
+        }
+        <div class="row row-buffer-15">
+            <div class="col-md-8">
+                @Html.TextBoxFor(x => x.Query, new { @class = "form-control" })
+            </div>
+            <div class="col-md-2 text-center">
+                <input type="submit" value="Search" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    }
+
+    <div class="row row-buffer-15">
+        <div class="col-md-2">
+            <div id="suggestions"></div>
+            @Html.DisplayFor(x => Model, "Suggestions")
+            @Html.DisplayFor(x => Model, "ResultsSorting")
+            @{
+                Html.RenderAction("Stats", Model);
+            }
+        </div>
+        <div class="col-md-8">
+            @Html.DisplayFor(x => Model, "Repos")
+        </div>
+
+    </div>
+}

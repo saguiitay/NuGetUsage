@@ -1,0 +1,80 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+
+.row-buffer-top-5 {
+    margin-top: 5px;
+}
+
+.row-buffer-top-10 {
+    margin-top: 10px;
+}
+
+.row-buffer-top-15 {
+    margin-top: 15px;
+}
+
+.row-buffer-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.row-buffer-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.row-buffer-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.row-buffer-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.row-buffer-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.row-buffer-15 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.packageLink a:link,
+.packageLink a:visited,
+.packageLink a:hover,
+.packageLink a:active,
+
+.packageLink > a:link,
+.packageLink > a:visited,
+.packageLink > a:hover,
+.packageLink > a:active,
+
+a:link    .packageLink,
+a:visited .packageLink,
+a:hover   .packageLink,
+a:active  .packageLink,
+a:link    > .packageLink,
+a:visited > .packageLink,
+a:hover   > .packageLink,
+a:active  > .packageLink
+{
+    text-decoration: none;
+}

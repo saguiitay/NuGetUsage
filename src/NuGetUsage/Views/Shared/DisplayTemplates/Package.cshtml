@@ -1,0 +1,52 @@
+﻿@using NuGetUsage.Helpers
+@using NuGetUsage.Models
+@model PackageRef
+
+@{
+    string packageSlug = SlugConverter.TitleToSlug(Model.Name);
+    string iconUrl = "https://nuget.org/Content/Images/packageDefaultIcon-50x50.png";
+    string summary = "";
+    List<string> tags = null;
+
+    var package = Model as Package;
+
+    if (package != null)
+    {
+        iconUrl = package.IconUrl ?? "https://nuget.org/Content/Images/packageDefaultIcon-50x50.png";
+        summary = package.Summary;
+        if (package.Tags != null)
+        {
+            tags = package.Tags.ToList();
+        }
+    }
+}
+
+<div class="col-md-6 col-sm-6">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title packageLink">
+                <a class="media" data-toggle="collapse" data-parent="#packages-accordion" href="#@packageSlug">
+                    <div class="pull-left">
+                        @if (!string.IsNullOrEmpty(iconUrl))
+                        {
+                            <img class="media-object" src="@iconUrl" alt="@Model.Name" style="width: 32px; height: 32px" />
+                        }
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            @Model.Name<br />
+                            <small>@Model.Version</small>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="@packageSlug" class="panel-collapse collapse">
+            <div class="panel-body">
+                @summary
+            </div>
+            @Html.DisplayFor(x => tags, "Tags")
+        </div>
+    </div>
+</div>
