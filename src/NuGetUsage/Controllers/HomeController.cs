@@ -106,7 +106,7 @@ namespace NuGetUsage.Controllers
 				
 				if (repo != null && repo.UpdatedFromGitHub != null)
 				{
-					if (repo.UpdatedFromGitHub.Value.AddDays(MinDaysBetweenImports) < DateTime.UtcNow)
+					if (repo.UpdatedFromGitHub.Value.AddDays(MinDaysBetweenImports) > DateTime.UtcNow)
 					{
 						return RedirectToAction("Index", model);
 					}
